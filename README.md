@@ -1,30 +1,60 @@
 # Paperclip
 
-Starter repository for setting up Paperclip AI on GitHub.
+Open-source AI agent orchestration platform for running zero-human companies. Powered by [Paperclip AI](https://github.com/paperclipai/paperclip).
 
-## Current status
+## Setup
 
-This repository has been initialized with a basic starter structure.
+### Prerequisites
+
+- Node.js 20+
+- npm or pnpm
+
+### Install
+
+```bash
+npm install
+```
+
+### Configure
+
+Copy `.env.example` to `.env` and fill in your values:
+
+```bash
+cp .env.example .env
+```
+
+Set at least one LLM provider key (`ANTHROPIC_API_KEY` or `OPENAI_API_KEY`).
+
+By default, Paperclip uses an embedded PostgreSQL database. To use an external database, set `DATABASE_URL`.
+
+### Run onboarding (first time only)
+
+```bash
+npx paperclipai onboard
+```
+
+### Start the server
+
+```bash
+npx paperclipai run
+```
+
+The dashboard will be available at `http://localhost:3100`.
 
 ## Included
 
-- `README.md` — project overview and setup notes
-- `.gitignore` — common Node / env / build ignores
+- `package.json` — paperclipai dependency
 - `.env.example` — environment variable template
+- `agents/` — agent definitions
+- `workflows/` — workflow definitions
+- `docs/` — project documentation
 
-## Recommended next steps
+## Environment variables
 
-1. Add the official Paperclip AI source code or run its official scaffold command locally.
-2. Fill in `.env` from `.env.example`.
-3. Commit the generated app files back to this repository.
-4. Add deployment config once the actual Paperclip stack is confirmed.
-
-## Environment
-
-This starter assumes a JavaScript / TypeScript-based AI app setup.
-
-## Notes
-
-There are multiple projects called "Paperclip" online, so this repo is currently prepared as a clean starter rather than a fully generated upstream clone.
-
-When the exact Paperclip AI source repo or install command is confirmed, this repo can be turned into the full app structure quickly.
+| Variable | Description |
+|---|---|
+| `DATABASE_URL` | External PostgreSQL URL (optional; uses embedded DB if unset) |
+| `ANTHROPIC_API_KEY` | Anthropic API key for Claude-based agents |
+| `OPENAI_API_KEY` | OpenAI API key for GPT-based agents |
+| `PORT` | Server port (default: 3100) |
+| `BETTER_AUTH_SECRET` | Required for Docker / non-local deployments |
