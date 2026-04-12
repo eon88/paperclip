@@ -152,7 +152,7 @@ def build_page(week_num, article_html, title, phase_id, phase_name):
     <div class="signup-block">
       <h3>Get the next issue in your inbox</h3>
       <p>Life Compass arrives every week — free. 52 issues. One complete journey.</p>
-      <form class="signup-form" action="https://formspree.io/f/eon88tfn@gmail.com" method="post">
+      <form class="signup-form" action="https://formspree.io/f/xyklgzvn" method="post">
         <input type="email" name="email" placeholder="Your email address" required>
         <button type="submit" class="btn">Subscribe Free →</button>
       </form>
