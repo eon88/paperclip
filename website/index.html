@@ -30,10 +30,12 @@
         You sense there is more in you than your current life is using.
         You're right. This newsletter is the map.
       </p>
-      <form class="signup-form" action="https://formspree.io/f/xyklgzvn" method="post">
-        <input type="email" name="email" placeholder="Your email address" required>
-        <button type="submit" class="btn">Start Reading →</button>
-      </form>
+      <div data-fs-success class="signup-success">You're in. First issue on its way.</div>
+<div data-fs-error class="signup-error"></div>
+<form id="form-hero" class="signup-form fs-form" method="post">
+  <input type="email" name="email" placeholder="Your email address" required data-fs-field>
+  <button type="submit" class="btn" data-fs-submit-btn>Start Reading &rarr;</button>
+</form>
       <p class="signup-note">Free. Every week. No spam. Unsubscribe anytime.</p>
     </div>
   </section>
@@ -203,10 +205,12 @@
         Subscribe and receive each issue the week it goes out — straight to your inbox.
         No algorithms. No noise. Just the work.
       </p>
-      <form class="signup-form" action="https://formspree.io/f/xyklgzvn" method="post">
-        <input type="email" name="email" placeholder="Your email address" required>
-        <button type="submit" class="btn">Subscribe Free →</button>
-      </form>
+      <div data-fs-success class="signup-success">You're in. First issue on its way.</div>
+<div data-fs-error class="signup-error"></div>
+<form id="form-subscribe" class="signup-form fs-form" method="post">
+  <input type="email" name="email" placeholder="Your email address" required data-fs-field>
+  <button type="submit" class="btn" data-fs-submit-btn>Subscribe Free &rarr;</button>
+</form>
       <p class="signup-note">Free. Every week. No spam. Unsubscribe anytime.</p>
     </div>
   </section>
@@ -226,5 +230,12 @@
     </div>
   </footer>
 
+<script>
+  window.formspree = window.formspree || function(){(formspree.q=formspree.q||[]).push(arguments);};
+  document.querySelectorAll('.fs-form').forEach(function(el){
+    formspree('initForm',{formElement:'#'+el.id,formId:'xyklgzvn'});
+  });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>

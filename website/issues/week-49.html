@@ -103,9 +103,11 @@ The ripple doesn't require an audience. It just requires you to keep going.
     <div class="signup-block">
       <h3>Get the next issue in your inbox</h3>
       <p>Life Compass arrives every week — free. 52 issues. One complete journey.</p>
-      <form class="signup-form" action="https://formspree.io/f/xyklgzvn" method="post">
-        <input type="email" name="email" placeholder="Your email address" required>
-        <button type="submit" class="btn">Subscribe Free →</button>
+      <div data-fs-success class="signup-success">You're in. First issue on its way.</div>
+      <div data-fs-error class="signup-error"></div>
+      <form id="form-article" class="signup-form fs-form" method="post">
+        <input type="email" name="email" placeholder="Your email address" required data-fs-field>
+        <button type="submit" class="btn" data-fs-submit-btn>Subscribe Free &rarr;</button>
       </form>
     </div>
 
@@ -129,5 +131,10 @@ The ripple doesn't require an audience. It just requires you to keep going.
     </div>
   </footer>
 
+<script>
+  window.formspree = window.formspree || function(){(formspree.q=formspree.q||[]).push(arguments);};
+  formspree('initForm',{formElement:'#form-article',formId:'xyklgzvn'});
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
