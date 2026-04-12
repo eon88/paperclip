@@ -4,10 +4,7 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'website/**'
-      - 'content/**'
-
+      - claude/check-companies-repo-3bPkF
   workflow_dispatch:
 
 permissions:
